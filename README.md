@@ -3,6 +3,9 @@ A replica of the class Arkanoid breakout game.
 
 # Unity Version : 2019.4.17f1
 
+# Instructions to Play:
+## After opening the project change the window aspect ratio to 16:9. Then hit Play to play the game.
+
 # Game Flow
 * Game starts with generating a random layout of bricks.
 * After the level generation the player can move the paddle to the left and right using Left arrow and Right arrow keys or the A and D keys.
