@@ -1,6 +1,8 @@
 # Arkanoid
 A replica of the class Arkanoid breakout game.
 
+# Unity Version : 2019.4.17f1
+
 # Game Flow
 * Game starts with generating a random layout of bricks.
 * After the level generation the player can move the paddle to the left and right using Left arrow and Right arrow keys or the A and D keys.
@@ -50,7 +52,7 @@ A replica of the class Arkanoid breakout game.
       # UpdateLives() This method is used to update the number of lives in the UI.
       # GameEnd()     This method is used to handle Game over sequence in the UI.
       # GameStart()   This method is used to handle Game start sequence in the UI.
-      # GameWin()     This method is used to handle Game win sequence in the UI.
+      # GameWin()      This method is used to handle Game win sequence in the UI.
       
  # PowerUpBase Class: 
  ## This is the base power up class from which the power ups are derived.
