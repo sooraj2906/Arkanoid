@@ -25,7 +25,9 @@ public class GameManager : MonoBehaviour
 
     public System.Action<int> OnScoreUpdated;
     public System.Action<int> OnGameEnd;
+    public System.Action<int> OnGameWin;
     public System.Action OnStart;
+    public System.Action<GameObject> OnBrickDestruction;
     public System.Action<int> OnLivesUpdated;
 
     public static GameManager pInstance { get; private set; }
@@ -38,6 +40,13 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
+    private void Update()
+    {
+        print(tileGenerator.GetTiles());
+    }
+
+
     /// <summary>
     /// Check remaining lives when the ball is destroyed and end the game if no lives or reset the ball to the paddle
     /// </summary>
@@ -112,6 +121,11 @@ public class GameManager : MonoBehaviour
         ball.isBonusTimer = true;
         ball.timer = 0f;
         OnScoreUpdated?.Invoke(score);
+        OnBrickDestruction?.Invoke(brick.gameObject);
+        if (tileGenerator.GetTiles() <= 0)
+        {
+            OnGameWin?.Invoke(score);
+        }
     }
 
 

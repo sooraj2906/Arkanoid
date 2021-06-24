@@ -26,6 +26,7 @@ public class TileGenerator : MonoBehaviour
     void Start()
     {
         GameManager.pInstance.OnStart += InitTiles;
+        GameManager.pInstance.OnBrickDestruction += RemoveBrick;
     }
 
     /// <summary>
@@ -69,6 +70,20 @@ public class TileGenerator : MonoBehaviour
         print("init tiles");
         PlaceBricks(columns, rows);
     }
+
+    public int GetTiles()
+    {
+        return tiles.Count;
+    }
+    /// <summary>
+    /// Used to remove the destroyed brick from the list of tiles
+    /// </summary>
+    /// <param name="brick">The destroyed brick</param>
+    private void RemoveBrick(GameObject brick)
+    {
+        tiles.Remove(brick);
+    }
+
     /// <summary>
     /// Loops through the existing list of tiles and removes all the tiles from the scene
     /// </summary>

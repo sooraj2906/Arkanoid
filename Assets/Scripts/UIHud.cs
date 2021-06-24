@@ -7,10 +7,10 @@ public class UIHud : MonoBehaviour
 {
     public TMP_Text score_text;
     public TMP_Text lives_text;
-    public GameObject gameOverScreen;
+    public GameObject gameOverScreen, gameWinScreen;
     public GameObject gameScore;
     public GameObject gameLives;
-    public TMP_Text gameOverScore;
+    public TMP_Text gameOverScore, gameWinScore;
 
     private void Start()
     {
@@ -18,7 +18,8 @@ public class UIHud : MonoBehaviour
         GameManager.pInstance.OnScoreUpdated += UpdateScore;
         GameManager.pInstance.OnLivesUpdated += UpdateLives;
         GameManager.pInstance.OnGameEnd += GameEnd; 
-        GameManager.pInstance.OnStart += GameStart; 
+        GameManager.pInstance.OnStart += GameStart;
+        GameManager.pInstance.OnGameWin += GameWin;
     }
 
     /// <summary>
@@ -46,6 +47,21 @@ public class UIHud : MonoBehaviour
         gameOverScreen.SetActive(true);
         gameOverScore.text = score.ToString();
     }
+
+    /// <summary>
+    /// Shows the game win screen and assign the score to the score text in the game over screen
+    /// </summary>
+    /// <param name="score">score received from GameManager</param>
+    private void GameWin(int score)
+    {
+        gameScore.SetActive(false);
+        gameLives.SetActive(false);
+        score_text.gameObject.SetActive(false);
+        gameWinScreen.SetActive(true);
+        gameWinScore.text = score.ToString();
+    }
+
+
     /// <summary>
     /// Shows the score text in UI
     /// </summary>
@@ -55,7 +71,9 @@ public class UIHud : MonoBehaviour
         gameLives.SetActive(true);
         score_text.gameObject.SetActive(true);
         gameOverScore.text = "0";
+        gameWinScore.text = "0";
         gameOverScreen.SetActive(false);
+        gameWinScreen.SetActive(false);
     }
 
     private void OnDestroy()
@@ -67,6 +85,7 @@ public class UIHud : MonoBehaviour
             GameManager.pInstance.OnLivesUpdated -= UpdateLives;
             GameManager.pInstance.OnGameEnd -= GameEnd;
             GameManager.pInstance.OnStart -= GameStart;
+            GameManager.pInstance.OnGameWin += GameWin;
         }
     }
 }

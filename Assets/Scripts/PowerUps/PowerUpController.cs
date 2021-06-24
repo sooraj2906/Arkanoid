@@ -83,7 +83,7 @@ public class PowerUpController : MonoBehaviour
     }
 
     /// <summary>
-    /// Remove the power up= ui from the activePowerUpsUI list and destroy the object
+    /// Remove the power up ui from the activePowerUpsUI list and destroy the object
     /// </summary>
     /// <param name="obj"></param>
     public void RemoveFromPowerUpUIList(GameObject obj)
