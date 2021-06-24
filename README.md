@@ -13,5 +13,5 @@ A replica of the class Arkanoid breakout game.
   * Slow ball
 * There are two types of bricks. Colored bricks take 1 hit to destroy and Metal bricks take 3 hits to destroy.
 
-#Game Flow Diagram
+# Game Flow Diagram
 
