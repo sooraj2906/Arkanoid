@@ -73,6 +73,8 @@ A replica of the class Arkanoid breakout game.
  # PiercePowerUp Class: 
  ## This is derived class of the PowerUpBase class that is used to define the properties of the Pierce power up.
       
+# Known Issues:
+ ## When Piercing ball power up is activated, the game loops through all the bricks and change the collider on them to trigger in order for the piercing power up to work. Looping through a list in runtime can be an expensive process. This can be improved.
       
       
 # Credits
