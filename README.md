@@ -49,6 +49,7 @@ A replica of the class Arkanoid breakout game.
       # UpdateLives() This method is used to update the number of lives in the UI.
       # GameEnd()     This method is used to handle Game over sequence in the UI.
       # GameStart()   This method is used to handle Game start sequence in the UI.
+      # GameWin()     This method is used to handle Game win sequence in the UI.
       
  # PowerUpBase Class: 
  ## This is the base power up class from which the power ups are derived.
