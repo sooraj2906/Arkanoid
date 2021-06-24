@@ -42,6 +42,7 @@ A replica of the class Arkanoid breakout game.
       # PlaceBricks()     This method is used to generate the grid and place the tiles in them.
       # ClearTiles()      This methos is used to create the scene of existing tiles.
       # InitTiles()       This method is used to reset the tiles at the start of the game.
+      # RemoveBrick()     This method is used to remove the destroyed brick from the list of tiles
  
  # UIHud Class: 
  ## This Class monitors and updates the UI element of the game.
