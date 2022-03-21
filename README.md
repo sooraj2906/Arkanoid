@@ -1,5 +1,5 @@
 # Arkanoid
-A replica of the class Arkanoid breakout game.
+A replica of the classic Arkanoid breakout game.
 
 # Unity Version : 2019.4.17f1
 
